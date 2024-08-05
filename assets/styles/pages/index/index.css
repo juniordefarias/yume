@@ -584,12 +584,24 @@ section > * {
   display: grid;
   gap: 64px;
 }
+@media (min-width: 1536px) {
+  .online_container > div {
+    max-width: 1200px;
+    width: calc(100% - 40px);
+    margin: 0 auto;
+  }
+}
 .online_container > div > * {
   padding: 0 20px;
 }
 @media (min-width: 768px) {
   .online_container > div > * {
     padding-left: 10%;
+  }
+}
+@media (min-width: 1536px) {
+  .online_container > div > * {
+    padding-left: 0;
   }
 }
 .online_container > div > div:nth-of-type(1) h2 {
@@ -624,6 +636,11 @@ section > * {
     grid-auto-columns: 30%;
   }
 }
+@media (min-width: 1536px) {
+  .online_container > div > div:nth-of-type(2) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
 .online_container > div > div:nth-of-type(2) > div {
   border-radius: 16px;
   overflow: hidden;
@@ -636,6 +653,11 @@ section > * {
 }
 .online_container > div > div:nth-of-type(2) > div img {
   height: 250px;
+}
+@media (min-width: 1536px) {
+  .online_container > div > div:nth-of-type(2) > div img {
+    height: 250px;
+  }
 }
 .online_container > div > div:nth-of-type(2) > div div:last-of-type span {
   display: block;
@@ -827,12 +849,24 @@ section > * {
   display: grid;
   gap: 64px;
 }
+@media (min-width: 1536px) {
+  .benefits_container > div {
+    max-width: 1200px;
+    width: calc(100% - 40px);
+    margin: 0 auto;
+  }
+}
 .benefits_container > div > * {
   padding: 0 20px;
 }
 @media (min-width: 768px) {
   .benefits_container > div > * {
     padding-left: 10%;
+  }
+}
+@media (min-width: 1536px) {
+  .benefits_container > div > * {
+    padding-left: 0;
   }
 }
 @media (min-width: 1024px) {
@@ -873,6 +907,11 @@ section > * {
     gap: 32px;
   }
 }
+@media (min-width: 1536px) {
+  .benefits_container > div > div:nth-of-type(2) {
+    grid-template-columns: 369px 2fr 1fr;
+  }
+}
 .benefits_container > div > div:nth-of-type(2) > div {
   border-radius: 16px;
   height: 280px;
@@ -898,6 +937,7 @@ section > * {
 @media (min-width: 768px) {
   .benefits_container > div > div:nth-of-type(2) > div:nth-of-type(1) {
     order: -1;
+    gap: 16px;
   }
 }
 .benefits_container > div > div:nth-of-type(2) > div:nth-of-type(1) p {
@@ -962,6 +1002,11 @@ section > * {
 @media (min-width: 768px) {
   .benefits_container > div > div:nth-of-type(2) > div:nth-of-type(2) {
     width: 640px;
+  }
+}
+@media (min-width: 1536px) {
+  .benefits_container > div > div:nth-of-type(2) > div:nth-of-type(2) {
+    width: inherit;
   }
 }
 .benefits_container > div > div:nth-of-type(2) > div:nth-of-type(3) {

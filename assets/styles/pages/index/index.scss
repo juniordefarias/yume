@@ -194,10 +194,18 @@
     width: 100%;
     max-width: inherit;
 
+    @media (min-width: $breakpoint-ultrawide) {
+      @include container();
+    }
+
     & > * {
       padding: 0 20px;
       @media (min-width: $breakpoint-medium) {
         padding-left: 10%;
+      }
+
+      @media (min-width: $breakpoint-ultrawide) {
+        padding-left: 0;
       }
     }
 
@@ -226,6 +234,10 @@
         grid-auto-columns: 30%;
       }
 
+      @media (min-width: $breakpoint-ultrawide) {
+        grid-template-columns: repeat(4, 1fr);
+      }
+
       & > div {
         border-radius: 16px;
         overflow: hidden;
@@ -243,6 +255,10 @@
 
         img {
           height: 250px;
+
+          @media (min-width: $breakpoint-ultrawide) {
+            height: 250px;
+          }
         }
 
         div:last-of-type {
@@ -404,10 +420,19 @@
     width: 100%;
     max-width: inherit;
 
+    @media (min-width: $breakpoint-ultrawide) {
+      @include container();
+    }
+
     & > * {
       padding: 0 20px;
+
       @media (min-width: $breakpoint-medium) {
         padding-left: 10%;
+      }
+
+      @media (min-width: $breakpoint-ultrawide) {
+        padding-left: 0;
       }
     }
 
@@ -442,6 +467,11 @@
         grid-template-columns: 369px 640px 360px;
         gap: 32px;
       }
+
+      @media (min-width: $breakpoint-ultrawide) {
+        grid-template-columns: 369px 2fr 1fr;
+      }
+
       
       & > div {
         border-radius: 16px;
@@ -472,6 +502,7 @@
 
         @media (min-width: $breakpoint-medium) {
           order: -1;
+          gap: 16px;
         }
 
         p {
@@ -545,6 +576,9 @@
 
         @media (min-width: $breakpoint-medium) {
           width: 640px;
+        }
+        @media (min-width: $breakpoint-ultrawide) {
+          width: inherit;
         }
       }
       & > div:nth-of-type(3) {
