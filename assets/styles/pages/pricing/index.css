@@ -625,6 +625,7 @@ section > * {
   scrollbar-width: none;
   grid-auto-columns: 80%;
   gap: 16px;
+  grid-auto-columns: 88%;
 }
 @media (min-width: 1024px) {
   .plans_container > div:nth-of-type(1) > div:nth-of-type(3) {
@@ -636,19 +637,25 @@ section > * {
   padding: 48px 32px 32px;
   border-radius: 24px;
 }
-.plans_container > div:nth-of-type(1) > div:nth-of-type(3) > div > div {
+.plans_container > div:nth-of-type(1) > div:nth-of-type(3) > div > div:first-of-type {
+  margin-bottom: 96px;
+  /* svg {
+    width: 36px;
+  } */
+}
+.plans_container > div:nth-of-type(1) > div:nth-of-type(3) > div > div:last-of-type > div {
   display: flex;
   justify-content: space-between;
   margin-top: 4px;
 }
-.plans_container > div:nth-of-type(1) > div:nth-of-type(3) > div > div span, .plans_container > div:nth-of-type(1) > div:nth-of-type(3) > div > div strong {
+.plans_container > div:nth-of-type(1) > div:nth-of-type(3) > div > div:last-of-type > div span, .plans_container > div:nth-of-type(1) > div:nth-of-type(3) > div > div:last-of-type > div strong {
   font-size: 14px;
   font-weight: 300 !important;
 }
-.plans_container > div:nth-of-type(1) > div:nth-of-type(3) > div > div span {
+.plans_container > div:nth-of-type(1) > div:nth-of-type(3) > div > div:last-of-type > div span {
   color: #CCCCCC;
 }
-.plans_container > div:nth-of-type(1) > div:nth-of-type(3) > div > div strong {
+.plans_container > div:nth-of-type(1) > div:nth-of-type(3) > div > div:last-of-type > div strong {
   color: #FFFFFF;
 }
 .plans_container > div:nth-of-type(1) > div:last-of-type {
@@ -703,8 +710,14 @@ section > * {
   grid-template-columns: repeat(2, 1fr);
   gap: 16px;
 }
+@media (min-width: 1024px) {
+  .plans_container > div:nth-of-type(2) > div:first-of-type > div {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
 .plans_container > div:nth-of-type(2) > div:first-of-type > div div {
   text-align: start;
+  position: relative;
 }
 .plans_container > div:nth-of-type(2) > div:first-of-type > div div label {
   color: #F4F4F4;
@@ -712,6 +725,28 @@ section > * {
   font-weight: 400 !important;
   display: block;
   margin-bottom: 8px;
+}
+.plans_container > div:nth-of-type(2) > div:first-of-type > div div svg {
+  position: absolute;
+  right: 12px;
+  bottom: 5px;
+}
+.plans_container > div:nth-of-type(2) > div:first-of-type > div div select, .plans_container > div:nth-of-type(2) > div:first-of-type > div div input {
+  all: unset;
+  background-color: #CCCCCC;
+  color: #1E1E1E;
+  padding: 12px 12px;
+  border-radius: 16px;
+  border: none;
+  outline: none;
+  width: 85%;
+}
+.plans_container > div:nth-of-type(2) > div:first-of-type > div div select {
+  cursor: pointer;
+}
+.plans_container > div:nth-of-type(2) > div:first-of-type > div div input {
+  background-color: #FFFFFF;
+  width: 195%;
 }
 .plans_container > div:nth-of-type(2) > div:last-of-type {
   background-color: #333333;
