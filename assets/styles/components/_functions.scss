@@ -1,0 +1,160 @@
+@mixin container() {
+  max-width: 1200px;
+  width: calc(100% - 40px);
+  margin: 0 auto;
+}
+
+@mixin carrousel($items: 3) {
+  display: grid;
+
+  grid-auto-flow: column;
+  grid-auto-columns: 80%;
+
+  overflow-x: auto;
+  overflow-y: scroll;
+  overscroll-behavior-inline: contain;
+
+  scrollbar-width: none;
+
+  grid-auto-columns: 80%;
+
+  @media (min-width: $breakpoint-large) {
+    grid-template-columns: repeat($items, 1fr);
+  }
+}
+
+@mixin subtitle($color) {
+  color: $color;
+  font-weight: 700;
+  display: inline-block;
+  margin-bottom: 8px;
+}
+
+@mixin border-top($pixels, $color) {
+  box-shadow: 0 $pixels 0 0px #141414;
+  margin-top: -$pixels;
+}
+
+@mixin toggle() {
+  input {
+    display: none;
+  }
+
+  label {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    //width: fit-content;
+    border: 8px solid #333333;
+    border-radius: 100px;
+    background: #333333;
+    font-weight: bold;
+    color: #333333;
+    cursor: pointer;
+ }
+
+  label::before {
+    content: '';
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    left: 0%;
+    border-radius: 100px;
+    background: $color-cinza-escuro;
+    transition: all 0.3s;
+  }
+
+  label div {
+    padding: 10px 14px;
+    text-align: center;
+    z-index: 1;
+
+    @media (min-width: $breakpoint-large) {
+      padding: 18px 16px;
+    }
+ }
+
+ input:checked + label::before {
+    left: 50%;
+  }
+
+  input:checked + label div:first-child{
+    color: $color-branco;
+    transition: color 0.3s;
+ }
+ input:checked + label div:last-child{
+    color: $color-rosa-yume;
+    transition: color 0.3s;
+ }
+ input + label div:first-child{
+    color: $color-rosa-yume;
+    transition: color 0.3s;
+ }
+ input + label div:last-child{
+    color: $color-branco;
+    transition: color 0.3s;
+ }
+}
+
+@mixin toggle-light() {
+  input {
+    display: none;
+  }
+
+  label {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    //width: fit-content;
+    border: 8px solid $color-cinza-claro;
+    border-radius: 100px;
+    background: $color-cinza-claro;
+    font-weight: bold;
+    color: $color-cinza-claro;
+    cursor: pointer;
+
+    font-weight: 400;
+ }
+
+  label::before {
+    content: '';
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    left: 0%;
+    border-radius: 100px;
+    background: $color-cinza-escuro;
+    transition: all 0.3s;
+  }
+
+  label div {
+    padding: 10px 14px;
+    text-align: center;
+    z-index: 1;
+
+    @media (min-width: $breakpoint-large) {
+      padding: 18px 16px;
+    }
+ }
+
+ input:checked + label::before {
+    left: 50%;
+  }
+
+  input:checked + label div:first-child{
+    color: $color-cinza-escuro;;
+    transition: color 0.3s;
+ }
+ input:checked + label div:last-child{
+    color: $color-branco;
+    transition: color 0.3s;
+ }
+ input + label div:first-child{
+    color: $color-branco;
+    transition: color 0.3s;
+ }
+ input + label div:last-child{
+    color: $color-cinza-escuro;
+    transition: color 0.3s;
+ }
+}

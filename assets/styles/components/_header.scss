@@ -1,0 +1,63 @@
+header {
+  & > div {
+    @include container();
+    padding: 16px 0;
+
+    @media (min-width: $breakpoint-medium) {
+      padding: 20px 0;
+    }
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  position: fixed;
+  top: 0;
+  width: 100%;
+  
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(12px);
+
+  z-index: 100000;
+
+  a {
+    line-height: 0;
+  }
+
+  img {
+    max-height: 28px;
+
+    @media (min-width: $breakpoint-medium) {
+      max-height: 32px;
+    }
+  }
+
+  button {
+    padding: 0;
+    background-color: transparent;
+  }
+
+  nav {
+    display: none;
+
+    ul {
+      display: flex;
+      gap: 24px;
+
+      li.selected {
+        color: $color-rosa-yume;
+      }
+    }
+  }
+
+  @media (min-width: $breakpoint-medium) {
+    button {
+      display: none;
+    }
+
+    nav {
+      display: flex;
+    }
+  }
+} 

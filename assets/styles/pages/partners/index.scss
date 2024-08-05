@@ -1,0 +1,64 @@
+@import "../../components/index";
+
+.home_container {
+  padding-bottom: 80px;
+
+  @media (min-width: $breakpoint-medium) {
+    padding-bottom: 0;
+  }
+
+  & > div {
+    & > div:first-of-type {
+      h1 {
+        max-width: 800px;
+      }
+      @media (min-width: $breakpoint-large) {
+        margin-bottom: 96px;
+      }
+    }
+    
+    & > div:last-of-type {
+      display: grid;
+      gap: 56px;
+
+      @media (min-width: $breakpoint-medium) {
+        display: block;
+        column-count: 2; /* Define o número de colunas */
+        column-gap: 48px;
+
+        & > div {
+          margin-bottom: 80px;
+        }
+      }
+
+      @media (min-width: $breakpoint-large) {
+        display: block;
+        column-count: 2; /* Define o número de colunas */
+        column-gap: 96px;
+
+        & > div {
+          margin-bottom: 120px;
+        }
+      }
+
+      & > div {
+        &:first-of-type {
+          margin-top: 80px;
+        }
+
+        img {
+          width: 100%;
+          border-radius: 16px;
+        }
+  
+        div {
+          margin-top: 24px;
+  
+          strong {
+            color: $color-cinza-escuro;
+          }
+        }
+      }
+    }
+  }
+}

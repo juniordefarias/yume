@@ -1,0 +1,136 @@
+@import "../../components/index";
+
+.home_container {
+  & > div {
+    display: grid;
+    gap: 54px;
+    
+    @media (min-width: $breakpoint-medium) {
+      grid-template-columns: 408px 1fr; //repeat(2, 1fr);
+    }
+
+    @media (min-width: $breakpoint-large) {
+      grid-template-columns: 538px 1fr 250px;
+      gap: 0px;
+    }
+
+    & > div:first-of-type {
+      h1 {
+        font-size: 36px;
+        letter-spacing: -1.7px;
+  
+        @media (min-width: $breakpoint-medium) {
+          font-size: 58px;
+        }
+      }
+  
+      p {
+        margin: 16px 0 24px;
+        max-width: 480px;
+      }
+    }
+
+    img {
+      margin: 0 auto;
+      @media (min-width: $breakpoint-large) {
+        margin-left: 54px;
+      }
+    }
+
+    & > div:last-of-type {
+      display: none;
+
+      @media (min-width: $breakpoint-large) {
+        display: grid;
+        gap: 32px;
+      }
+
+      span {
+        font-size: 24px;
+        color: $color-rosa-yume;
+        font-weight: 600;
+
+        display: inline-block;
+        margin-bottom: 12px;
+      }
+
+      p {
+        font-size: 20px;
+      }
+    }
+  }
+}
+
+.benefits_container {
+  padding: 80px 0;
+
+  & > div {
+    & > div:nth-of-type(1) {
+      display: grid;
+      gap: 80px;
+
+      @media (min-width: $breakpoint-medium) {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      
+      @media (min-width: $breakpoint-large) {
+        grid-template-columns: repeat(4, 1fr);
+      }
+
+      svg {
+        display: block;
+        margin: 0 auto;
+
+        @media (min-width: $breakpoint-large) {
+          margin: 0;
+        }
+      }
+
+      & > div {
+        div:last-of-type {
+          margin-top: 32px;
+
+          text-align: center;
+
+          padding: 0 24px;
+
+          @media (min-width: $breakpoint-medium) {
+            padding: 0;
+          }
+
+          @media (min-width: $breakpoint-large) {
+            text-align: start;
+          }
+
+          span {
+            display: block;
+            font-size: $font-size-strong-mobile;
+            font-weight: 600;
+
+            margin-bottom: 8px;
+          }
+
+          small {
+            font-size: $font-size-p-mobile;
+
+            color: $color-cinza-escuro;
+            opacity: 0.7;
+          }
+
+          @media (min-width: $breakpoint-medium) {
+            span {
+              font-size: 22px;
+            }
+            small {
+              font-size: $font-size-p-desktop;
+            }
+          }
+        }
+      }
+    }
+
+    & > div:last-of-type {
+      
+    }
+  }
+}
