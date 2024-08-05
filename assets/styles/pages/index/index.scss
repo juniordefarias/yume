@@ -190,6 +190,17 @@
   color: $color-branco;
 
   & > div {
+    margin: 0;
+    width: 100%;
+    max-width: inherit;
+
+    & > * {
+      padding: 0 20px;
+      @media (min-width: $breakpoint-medium) {
+        padding-left: 10%;
+      }
+    }
+
     display: grid;
     gap: 64px;
 
@@ -389,6 +400,17 @@
 
 .benefits_container {
   & > div {
+    margin: 0;
+    width: 100%;
+    max-width: inherit;
+
+    & > * {
+      padding: 0 20px;
+      @media (min-width: $breakpoint-medium) {
+        padding-left: 10%;
+      }
+    }
+
     display: grid;
     gap: 64px;
 
@@ -403,6 +425,7 @@
     }
 
     & > div:nth-of-type(2) {
+      overflow: visible;
       @include carrousel(8);
       gap: 16px;
 
@@ -430,9 +453,8 @@
         flex-direction: column;
         justify-content: space-between;
 
-        @media (min-width: $breakpoint-large) {
-          height: 500px;//600px;
-          //padding: 64px;
+        @media (min-width: $breakpoint-medium) {
+          height: 500px;
         }
       }
 
@@ -555,6 +577,10 @@
     }
 
     & > div:last-of-type {
+      @media (min-width: $breakpoint-medium) {
+        @include container();
+      }
+
       a {
         display: flex;
         justify-content: end;
