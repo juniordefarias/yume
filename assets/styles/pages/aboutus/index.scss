@@ -227,15 +227,36 @@
 
           border-radius: 16px;
 
+          cursor: pointer;
+
           &.selected {
             opacity: 1;
             filter: grayscale(0%);
           }
         }
       }
+
+      & > div:nth-of-type(2) {
+        img {
+          display: none;
+
+          border-radius: 16px;
+  
+          &.selected {
+            display: inherit;
+          }
+        }
+      }
     }
 
+
     aside {
+      display: none;
+
+      &.selected {
+        display: inherit;
+      }
+
       h3 {
         font-size: 24px;
         margin-bottom: 4px;
