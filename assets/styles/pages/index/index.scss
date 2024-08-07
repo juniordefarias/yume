@@ -226,7 +226,7 @@
 
       @media (min-width: $breakpoint-medium) {
         grid-auto-columns: 44%;
-        padding-bottom: 4px;
+        // padding-bottom: 4px;
       }
 
       @media (min-width: $breakpoint-large) {
@@ -237,6 +237,8 @@
       @media (min-width: $breakpoint-ultrawide) {
         grid-template-columns: repeat(4, 1fr);
       }
+
+      @include animation-scale-items();
 
       & > /* div */ li {
         border-radius: 16px;
@@ -472,6 +474,8 @@
         grid-template-columns: 369px 2fr 1fr;
       }
 
+      padding-top: 8px;
+      padding-bottom: 16px !important;
       
       & > /* div */li {
         border-radius: 16px;
@@ -526,6 +530,8 @@
         overflow: hidden;
 
         position: relative;
+
+        @include animation-scale();
 
         img {
           width: 100%;

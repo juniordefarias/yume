@@ -487,6 +487,22 @@ section > * {
   margin: 0 auto;
 }
 
+a {
+  transition: color 0.5s ease;
+}
+a svg {
+  transition: transform 0.5s ease;
+}
+a:hover {
+  color: #FF6986 !important;
+}
+a:hover svg {
+  transform: translateX(4px);
+}
+a:hover svg path {
+  fill: #FF6986 !important;
+}
+
 .home_container {
   background-color: #1E1E1E;
   color: #FFFFFF;
@@ -695,6 +711,8 @@ section > * {
   grid-auto-columns: 80%;
   gap: 16px;
   grid-auto-columns: 90%;
+  padding-top: 8px;
+  padding-bottom: 16px;
 }
 @media (min-width: 1024px) {
   .online_container > div > ul {
@@ -704,7 +722,6 @@ section > * {
 @media (min-width: 768px) {
   .online_container > div > ul {
     grid-auto-columns: 44%;
-    padding-bottom: 4px;
   }
 }
 @media (min-width: 1024px) {
@@ -717,6 +734,19 @@ section > * {
   .online_container > div > ul {
     grid-template-columns: repeat(4, 1fr);
   }
+}
+@media (min-width: 1024px) {
+  .online_container > div > ul {
+    padding-left: 8px;
+    margin-left: -8px;
+  }
+}
+.online_container > div > ul > * {
+  cursor: pointer;
+  transition: transform 0.5s ease;
+}
+.online_container > div > ul > *:hover {
+  transform: scale(1.03);
 }
 .online_container > div > ul > li {
   border-radius: 16px;
@@ -966,6 +996,8 @@ section > * {
   grid-auto-columns: 80%;
   gap: 16px;
   grid-auto-columns: 88%;
+  padding-top: 8px;
+  padding-bottom: 16px !important;
 }
 @media (min-width: 1024px) {
   .benefits_container > div > ul {
@@ -1035,6 +1067,18 @@ section > * {
   padding: 0;
   overflow: hidden;
   position: relative;
+  /* & > * {
+    cursor: pointer;
+    transition: transform 0.5s ease;
+    &:hover {
+      transform: scale(1.03);
+    }
+  } */
+  cursor: pointer;
+  transition: transform 0.5s ease;
+}
+.benefits_container > div > ul > li:nth-of-type(2):hover {
+  transform: scale(1.03);
 }
 .benefits_container > div > ul > li:nth-of-type(2) img {
   width: 100%;

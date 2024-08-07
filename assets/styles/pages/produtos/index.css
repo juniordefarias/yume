@@ -487,6 +487,22 @@ section > * {
   margin: 0 auto;
 }
 
+a {
+  transition: color 0.5s ease;
+}
+a svg {
+  transition: transform 0.5s ease;
+}
+a:hover {
+  color: #FF6986 !important;
+}
+a:hover svg {
+  transform: translateX(4px);
+}
+a:hover svg path {
+  fill: #FF6986 !important;
+}
+
 .home_container {
   /* & > div {
     & > div:nth-of-type(1) {

@@ -35,10 +35,18 @@
       @media (min-width: $breakpoint-large) {
         margin-left: 54px;
       }
+
+      @include animation-scale();
+
+      cursor: default;
     }
 
     & > /* div:last-of-type */ ul {
       display: none;
+
+      & > li {
+        @include animation-up();
+      }
 
       @media (min-width: $breakpoint-large) {
         display: grid;
@@ -87,6 +95,8 @@
       }
 
       & > /* div */ li {
+        @include animation-up();
+
         div:last-of-type {
           margin-top: 32px;
 

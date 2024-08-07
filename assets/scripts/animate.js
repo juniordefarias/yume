@@ -33,6 +33,11 @@ function observeParent(element) {
           entry.target.parentElement.classList.add('animate__fadeInUp');
           console.log(entry.target.parentElement);
         }, 200);
+
+        setTimeout(() => {
+          child.style.opacity = 1;
+          child.classList.remove('animate__animated', 'animate__fadeInUp');
+        }, 1000);
       } else {
         //entry.target.classList.remove('animate__slideInUp');
       }
@@ -53,6 +58,12 @@ function observe(element, delay=0) {
       if (entry.isIntersecting) {
         setTimeout(() => {
           entry.target/* .parentElement */.classList.add('animate__fadeInUp');
+
+          // remover o animate depois de 1 segundo
+          setTimeout(() => {
+            child.style.opacity = 1;
+            child.classList.remove('animate__animated', 'animate__fadeInUp');
+          }, 1000);
         }, delay);
       } else {
         //entry.target.classList.remove('animate__slideInUp');
@@ -72,10 +83,14 @@ function observeChildren(element) {
         Array.from(entry.target.children).forEach((child, index) => {
           const delay = index * 100;
 
-          child.classList.add('animate__animated');
-
           setTimeout(() => {
             child.classList.add('animate__fadeInUp');
+
+            setTimeout(() => {
+              child.style.opacity = 1;
+              child.classList.remove('animate__animated', 'animate__fadeInUp');
+            }, 1000);
+
           }, delay);
         });
       } 
@@ -88,7 +103,11 @@ function observeChildren(element) {
   
   elementos.forEach(elemento => {
     if (!elemento.classList.contains('not-to-animate')) {
-      Array.from(elemento.children).forEach(child => child.style.opacity = 0);
+      Array.from(elemento.children).forEach(child => {
+        child.style.opacity = 0;
+        child.classList.add('animate__animated');
+      });
+
       observer.observe(elemento)
     } 
   });

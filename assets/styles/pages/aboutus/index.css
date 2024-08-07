@@ -487,6 +487,22 @@ section > * {
   margin: 0 auto;
 }
 
+a {
+  transition: color 0.5s ease;
+}
+a svg {
+  transition: transform 0.5s ease;
+}
+a:hover {
+  color: #FF6986 !important;
+}
+a:hover svg {
+  transform: translateX(4px);
+}
+a:hover svg path {
+  fill: #FF6986 !important;
+}
+
 .home_container > div {
   margin: 0;
   width: 100%;
@@ -538,12 +554,22 @@ section > * {
   grid-auto-columns: 80%;
   gap: 24px;
   grid-auto-columns: 60%;
+  padding-top: 8px;
   margin-top: 54px;
 }
 @media (min-width: 1024px) {
   .home_container > div > div:nth-of-type(1) > ul {
     grid-template-columns: repeat(3, 1fr);
   }
+}
+.home_container > div > div:nth-of-type(1) > ul > * {
+  transition: transform 0.5s ease;
+}
+.home_container > div > div:nth-of-type(1) > ul > *:hover {
+  transform: translateY(-8px);
+}
+.home_container > div > div:nth-of-type(1) > ul > *:active {
+  transform: translateY(0px);
 }
 @media (min-width: 768px) {
   .home_container > div > div:nth-of-type(1) > ul {
@@ -567,12 +593,24 @@ section > * {
   width: calc(100% - 40px);
   height: 350px;
   position: relative;
+  /* & > * {
+    cursor: pointer;
+    transition: transform 0.5s ease;
+    &:hover {
+      transform: scale(1.03);
+    }
+  } */
+  cursor: pointer;
+  transition: transform 0.5s ease;
 }
 @media (min-width: 768px) {
   .home_container > div > div:nth-of-type(2) {
     width: 100%;
     height: 480px;
   }
+}
+.home_container > div > div:nth-of-type(2):hover {
+  transform: scale(1.03);
 }
 .home_container > div > div:nth-of-type(2) img {
   width: 100%;
@@ -754,13 +792,29 @@ section > * {
     padding-left: 10%;
   }
 }
-.evolution_container > div > strong {
+.evolution_container > div > div:first-of-type {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+}
+.evolution_container > div > div:first-of-type > strong {
   color: #FF4A71;
   font-weight: 700;
   display: inline-block;
   margin-bottom: 8px;
 }
-.evolution_container > div > div {
+.evolution_container > div > div:first-of-type div:last-of-type {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 50%;
+}
+@media (1024px) {
+  .evolution_container > div > div:first-of-type div:last-of-type {
+    display: block;
+  }
+}
+.evolution_container > div > div:last-of-type {
   margin-top: 56px;
   display: grid;
   grid-auto-flow: column;
@@ -772,42 +826,42 @@ section > * {
   grid-auto-columns: 80%;
 }
 @media (min-width: 1024px) {
-  .evolution_container > div > div {
+  .evolution_container > div > div:last-of-type {
     grid-template-columns: repeat(3, 1fr);
   }
 }
 @media (min-width: 768px) {
-  .evolution_container > div > div {
+  .evolution_container > div > div:last-of-type {
     grid-auto-columns: 48%;
   }
 }
 @media (min-width: 1024px) {
-  .evolution_container > div > div {
+  .evolution_container > div > div:last-of-type {
     grid-template-columns: inherit;
     grid-auto-columns: 30%;
   }
 }
-.evolution_container > div > div > div > div {
+.evolution_container > div > div:last-of-type > div > div {
   display: flex;
   align-items: center;
   height: 30px;
   margin-bottom: 32px;
 }
-.evolution_container > div > div > div > div span {
+.evolution_container > div > div:last-of-type > div > div span {
   font-size: 24px;
   color: #FF4A71;
   font-weight: 600;
   padding: 0 8px;
 }
-.evolution_container > div > div > div > div div {
+.evolution_container > div > div:last-of-type > div > div div {
   width: 100%;
   height: 1px;
   background-color: #CCCCCC;
 }
-.evolution_container > div > div strong {
+.evolution_container > div > div:last-of-type strong {
   color: #FFFFFF;
 }
-.evolution_container > div > div p {
+.evolution_container > div > div:last-of-type p {
   color: #CCCCCC;
   margin-top: 8px;
   margin-right: 48px;
