@@ -1,9 +1,17 @@
 button {
   padding: 16px 32px;
   background-color: $color-rosa-yume;
+  
   color: $color-branco;
 
   font-size: 18px;
 
   border-radius: 100px;
+
+  transition: background-color 0.3s ease-in;
+
+  &:hover {
+    background-color: #FF6986;
+  }
 }
+

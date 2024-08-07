@@ -30,7 +30,7 @@
       }
     }
 
-    & > div:last-of-type {
+    & > /* div:last-of-type */ ul {
       display: none;
 
       @media (min-width: $breakpoint-medium) {
@@ -100,11 +100,11 @@
         }
       }
 
-      & > div:nth-of-type(2) {
+      & > /* div:nth-of-type(2) */ ul {
         display: grid;
         gap: 56px;
   
-        & > div {
+        & > li {
           display: grid;
           grid-template-columns: 48px 1fr;
           gap: 16px;
@@ -218,7 +218,7 @@
       }
     }
 
-    & > div:nth-of-type(2) {
+    & > /* div:nth-of-type(2) */ul {
       @include carrousel(4);
       gap: 16px;
 
@@ -238,7 +238,7 @@
         grid-template-columns: repeat(4, 1fr);
       }
 
-      & > div {
+      & > /* div */ li {
         border-radius: 16px;
         overflow: hidden;
 
@@ -449,7 +449,7 @@
       }
     }
 
-    & > div:nth-of-type(2) {
+    & > /* div:nth-of-type(2) */ul {
       overflow: visible;
       @include carrousel(8);
       gap: 16px;
@@ -473,7 +473,7 @@
       }
 
       
-      & > div {
+      & > /* div */li {
         border-radius: 16px;
         height: 280px;
 
@@ -488,7 +488,7 @@
         }
       }
 
-      & > div:nth-of-type(1) {
+      & > /* div:nth-of-type(1) */ li:nth-of-type(1) {
         background-color: $color-cinza-escuro;
 
         display: flex;
@@ -521,7 +521,7 @@
           font-weight: 700;
         }
       }
-      & > div:nth-of-type(2) {
+      & > /* div:nth-of-type(2) */ li:nth-of-type(2) {
         padding: 0;
         overflow: hidden;
 
@@ -581,7 +581,7 @@
           width: inherit;
         }
       }
-      & > div:nth-of-type(3) {
+      & > /* div:nth-of-type(3) */ li:nth-of-type(3) {
         order: 3;
 
         background-color: $color-rosa-yume;

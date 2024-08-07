@@ -134,13 +134,14 @@
         top: calc(60px + 24px);
         background-color: #141414;
 
-        position: relative;
-        top: 0;
-
+        
         @media (min-width: $breakpoint-large) {
           display: flex;
-
+          
           padding-top: 64px;
+
+          position: relative;
+          top: 0;
 
           img {
             position: absolute;
@@ -158,13 +159,15 @@
       & > div:nth-of-type(3) {
         top: calc(60px + 72px);
         background-color: #333333;
-        position: relative;
-        top: 0;
+        
 
         @media (min-width: $breakpoint-large) {
           display: flex;
 
           padding-top: 64px;
+
+          position: relative;
+          top: 0;
           
           img {
             position: absolute;
@@ -208,7 +211,5 @@
         }
       }
     }
-
-    
   }
 }

@@ -57,36 +57,36 @@ function calcularTaxa() {
 
   // Exemplo de taxas, ajustadas para incluir diferentes taxas de acordo com o prazo de recebimento
   const taxas = {
-      debito: {
-          visa: { '1_dia': 0.75, '30_dias': 0.67 },
-          mastercard: { '1_dia': 0.75, '30_dias': 0.67 },
-          amex: { '1_dia': 1.88, '30_dias': 1.88 },
-          elo: { '1_dia': 1.88, '30_dias': 1.88 }
-      },
-      credito_vista: {
-          visa: { '1_dia': 2.69, '30_dias': 2.19 },
-          mastercard: { '1_dia': 2.69, '30_dias': 2.19 },
-          amex: { '1_dia': 4.46, '30_dias': 3.09 }, // Exemplo de taxa menor para 30 dias
-          elo: { '1_dia': 4.46, '30_dias': 3.09 }
-      },
-      credito_2x: {
-          visa: { '1_dia': 3.94, '30_dias': 3.24 },
-          mastercard: { '1_dia': 3.94, '30_dias': 3.24 },
-          amex: { '1_dia': 5.81, '30_dias': 5.09 }, // Exemplo de taxa menor para 30 dias
-          elo: { '1_dia': 5.81, '30_dias': 5.09 }
-      },
-      credito_6x: {
-          visa: { '1_dia': 5.99, '30_dias': 4.59 },
-          mastercard: { '1_dia': 5.99, '30_dias': 4.59 },
-          amex: { '1_dia': 7.83, '30_dias': 7.00 }, // Exemplo de taxa menor para 30 dias
-          elo: { '1_dia': 7.83, '30_dias': 7.00 }
-      },
-      credito_12x: {
-          visa: { '1_dia': 8.99, '30_dias': 7.5 },
-          mastercard: { '1_dia': 8.99, '30_dias': 7.5 },
-          amex: { '1_dia': 10.77, '30_dias': 8.99 }, // Exemplo de taxa menor para 30 dias
-          elo: { '1_dia': 10.77, '30_dias': 8.99 }
-      },
+    debito: {
+        visa: { '1_dia': 0.75, '30_dias': 0.67 },
+        mastercard: { '1_dia': 0.75, '30_dias': 0.67 },
+        amex: { '1_dia': 1.88, '30_dias': 1.72 },
+        elo: { '1_dia': 1.88, '30_dias': 1.72 }
+    },
+    credito_vista: {
+        visa: { '1_dia': 2.69, '30_dias': 2.19 },
+        mastercard: { '1_dia': 2.69, '30_dias': 2.19 },
+        amex: { '1_dia': 4.46, '30_dias': 3.09 }, // Exemplo de taxa menor para 30 dias
+        elo: { '1_dia': 4.46, '30_dias': 3.09 }
+    },
+    credito_2x: {
+        visa: { '1_dia': 3.94, '30_dias': 3.24 },
+        mastercard: { '1_dia': 3.94, '30_dias': 3.24 },
+        amex: { '1_dia': 5.81, '30_dias': 5.09 }, // Exemplo de taxa menor para 30 dias
+        elo: { '1_dia': 5.81, '30_dias': 5.09 }
+    },
+    credito_6x: {
+        visa: { '1_dia': 5.99, '30_dias': 4.59 },
+        mastercard: { '1_dia': 5.99, '30_dias': 4.59 },
+        amex: { '1_dia': 7.83, '30_dias': 7.00 }, // Exemplo de taxa menor para 30 dias
+        elo: { '1_dia': 7.83, '30_dias': 7.00 }
+    },
+    credito_12x: {
+        visa: { '1_dia': 8.99, '30_dias': 7.5 },
+        mastercard: { '1_dia': 8.99, '30_dias': 7.5 },
+        amex: { '1_dia': 10.77, '30_dias': 8.99 }, // Exemplo de taxa menor para 30 dias
+        elo: { '1_dia': 10.77, '30_dias': 8.99 }
+    },
   };
 
   const taxaParcela = taxas[parcela][bandeira][recebimento];

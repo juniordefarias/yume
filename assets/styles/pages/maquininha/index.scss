@@ -37,7 +37,7 @@
       }
     }
 
-    & > div:last-of-type {
+    & > /* div:last-of-type */ ul {
       display: none;
 
       @media (min-width: $breakpoint-large) {
@@ -65,7 +65,7 @@
   padding: 80px 0;
 
   & > div {
-    & > div:nth-of-type(1) {
+    & > /* div:nth-of-type(1) */ ul {
       display: grid;
       gap: 80px;
 
@@ -86,7 +86,7 @@
         }
       }
 
-      & > div {
+      & > /* div */ li {
         div:last-of-type {
           margin-top: 32px;
 
@@ -127,10 +127,6 @@
           }
         }
       }
-    }
-
-    & > div:last-of-type {
-      
     }
   }
 }
