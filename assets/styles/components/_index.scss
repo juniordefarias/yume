@@ -9,6 +9,8 @@
 @import "./form_container";
 @import "./faq";
 
+@import "./custom_animations";
+
 @font-face {
   font-family: 'SF Pro Display';
   src: url('assets/fonts/SF-Pro-Display-Bold.otf') format('otf');
@@ -92,8 +94,9 @@ p {
     font-size: $font-size-p-desktop;
   }
 
-  color: $color-cinza-escuro;
-  opacity: 0.7;
+  /* color: $color-cinza-escuro;
+  opacity: 0.7; */
+  color: #626262;
 }
 
 strong {

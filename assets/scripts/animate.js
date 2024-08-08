@@ -8,7 +8,7 @@
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         setTimeout(() => {
-          entry.target.classList.add('animate__fadeInUp');
+          entry.target.classList.add('animate__fadeInUpCustom');
           console.log(entry.target);
         }, 200);
       } else {
@@ -30,13 +30,13 @@ function observeParent(element, delay=0) {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         setTimeout(() => {
-          entry.target.parentElement.classList.add('animate__fadeInUp');
+          entry.target.parentElement.classList.add('animate__fadeInUpCustom');
           console.log(entry.target.parentElement);
         }, delay);
 
         setTimeout(() => {
           child.style.opacity = 1;
-          child.classList.remove('animate__animated', 'animate__fadeInUp');
+          child.classList.remove('animate__animated', 'animate__fadeInUpCustom');
         }, 1000);
       } else {
         //entry.target.classList.remove('animate__slideInUp');
@@ -57,12 +57,12 @@ function observe(element, delay=0) {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         setTimeout(() => {
-          entry.target/* .parentElement */.classList.add('animate__fadeInUp');
+          entry.target/* .parentElement */.classList.add('animate__fadeInUpCustom');
 
           // remover o animate depois de 1 segundo
           setTimeout(() => {
             child.style.opacity = 1;
-            child.classList.remove('animate__animated', 'animate__fadeInUp');
+            child.classList.remove('animate__animated', 'animate__fadeInUpCustom');
           }, 1000);
         }, delay);
       } else {
@@ -81,14 +81,14 @@ function observeChildren(element) {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         Array.from(entry.target.children).forEach((child, index) => {
-          const delay = index * 100;
+          const delay = index * 200;
 
           setTimeout(() => {
-            child.classList.add('animate__fadeInUp');
+            child.classList.add('animate__fadeInUpCustom');
 
             setTimeout(() => {
               child.style.opacity = 1;
-              child.classList.remove('animate__animated', 'animate__fadeInUp');
+              child.classList.remove('animate__animated', 'animate__fadeInUpCustom');
             }, 1000);
 
           }, delay);
@@ -117,7 +117,7 @@ document.addEventListener("DOMContentLoaded", function() {
   observe('h1', 100);
   observe('h1 + p', 400);
   observeParent('h2', 150);
-  observe('h3', 300);
+  observe('h3', 100);
   observe('button', 400);
 
   observe('.home_container > div > div strong', 300);

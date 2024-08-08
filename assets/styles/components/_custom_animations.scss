@@ -1,0 +1,16 @@
+@keyframes customFadeInUp {
+  from {
+      opacity: 0;
+      transform: translate3d(0, 32px, 0);
+  }
+  to {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+  }
+}
+
+.animate__fadeInUpCustom {
+  animation-name: customFadeInUp;
+  animation-duration: 0.6s; /* Duração da animação */
+  animation-fill-mode: both; /* Garante que a animação permaneça no estado final */
+}

@@ -28,7 +28,19 @@ function smoothScrollTo(target, duration) {
 
 const buttons = document.querySelectorAll('button');
 buttons.forEach(button => {
-  button.addEventListener('click', () => {
+  const buttonText = button.textContent.trim().toLocaleLowerCase();
+      
+  if (buttonText === 'impulsione seu negócio') {
+    button.addEventListener('click', () => { 
+      // Seleciona o formulário pelo ID
+    const form = document.querySelectorAll('form')[0];
+
+    // Rolagem suave para o formulário
+    //form.scrollIntoView({ behavior: 'smooth' });
+    smoothScrollTo(form, 2000);
+    });
+  }
+  /* button.addEventListener('click', () => {
 
     // Seleciona o formulário pelo ID
     const form = document.querySelectorAll('form')[0];
@@ -36,5 +48,5 @@ buttons.forEach(button => {
     // Rolagem suave para o formulário
     //form.scrollIntoView({ behavior: 'smooth' });
     smoothScrollTo(form, 2000);
-  });
+  }); */
 });

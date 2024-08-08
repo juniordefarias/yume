@@ -301,7 +301,7 @@
     & > * {
       padding-left: 20px;
       @media (min-width: $breakpoint-medium) {
-        padding-left: 10%;
+        padding-left: calc((100% - 1200px) / 2);
       }
     }
 
@@ -320,10 +320,18 @@
 
         position: absolute;
         top: 0;
-        left: 50%;
+        right: 10%;
+        
+        gap: 32px;
 
-        @media ($breakpoint-large) {
-          display: block;
+        svg {
+          cursor: pointer;
+
+          transition: all 0.3s ease-in;
+        }
+
+        @media (min-width: $breakpoint-large) {
+          display: flex;
         }
       }
     }

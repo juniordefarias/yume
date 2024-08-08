@@ -449,7 +449,6 @@ button:hover {
 .faq_container > div > div:last-of-type > div > div:first-of-type {
   display: flex;
   justify-content: space-between;
-  align-items: center;
   cursor: pointer;
 }
 .faq_container > div > div:last-of-type > div > div:first-of-type span {
@@ -457,6 +456,8 @@ button:hover {
 }
 .faq_container > div > div:last-of-type > div > div:first-of-type svg {
   transition: transform 0.3s ease;
+  height: 24px;
+  width: 24px;
 }
 .faq_container > div > div:last-of-type > div > div:last-of-type {
   max-height: 0;
@@ -473,6 +474,22 @@ button:hover {
   margin-top: 12px;
   padding-top: 16px;
   border-top: 1px solid #CCCCCC;
+}
+
+@keyframes customFadeInUp {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 32px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+.animate__fadeInUpCustom {
+  animation-name: customFadeInUp;
+  animation-duration: 0.6s; /* Duração da animação */
+  animation-fill-mode: both; /* Garante que a animação permaneça no estado final */
 }
 
 @font-face {
@@ -548,8 +565,9 @@ strong {
 
 p {
   font-size: 14px;
-  color: #1E1E1E;
-  opacity: 0.7;
+  /* color: $color-cinza-escuro;
+  opacity: 0.7; */
+  color: #626262;
 }
 @media (min-width: 1024px) {
   p {

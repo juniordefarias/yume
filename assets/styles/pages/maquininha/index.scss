@@ -3,7 +3,8 @@
 .home_container {
   & > div {
     display: grid;
-    gap: 54px;
+    //gap: 54px;
+    gap: 96px;
     
     @media (min-width: $breakpoint-medium) {
       grid-template-columns: 408px 1fr; //repeat(2, 1fr);

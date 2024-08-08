@@ -209,9 +209,10 @@
 
           <div>
             <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <rect x="1.5" y="1.5" width="45" height="45" rx="22.5" stroke="#FF4A71" stroke-opacity="0.3" stroke-width="3"/>
-              <path d="M17.7426 22.1673H36V25.1673H17.7426L25.7886 33.2132L23.6673 35.3345L12 23.6673L23.6673 12L25.7886 14.1213L17.7426 22.1673Z" fill="#FF4A71" fill-opacity="0.3"/>
+              <rect x="1.5" y="1.5" width="45" height="45" rx="22.5" stroke="#FF4A71" stroke-width="3"/>
+              <path d="M17.7426 22.1673L36 22.1673V25.1673L17.7426 25.1673L25.7886 33.2132L23.6673 35.3345L12 23.6673L23.6673 12L25.7886 14.1213L17.7426 22.1673Z" fill="#FF4A71"/>
               </svg>
+              
   
             <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
               <rect x="46.5" y="46.5" width="45" height="45" rx="22.5" transform="rotate(-180 46.5 46.5)" stroke="#FF4A71" stroke-width="3"/>
@@ -510,5 +511,88 @@
   <script src="assets/scripts/animate.js"></script>
   <script src="assets/scripts/scrollToForm.js"></script>
   <script src="assets/scripts/faq.js"></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+  const carrouselContainer = document.querySelector('.evolution_container > div > div:last-of-type');
+  const leftArrow = document.querySelector('.evolution_container svg:first-of-type');
+  const rightArrow = document.querySelector('.evolution_container svg:last-of-type');
+
+  let scrollAmount = 0;
+  const scrollStep = 300; // Ajuste o valor conforme necessário
+  const maxScroll = carrouselContainer.scrollWidth - carrouselContainer.clientWidth;
+
+  function updateArrowState() {
+    leftArrow.style.opacity = scrollAmount === 0 ? '0.3' : '1';
+    rightArrow.style.opacity = scrollAmount >= maxScroll ? '0.3' : '1';
+  }
+
+  rightArrow.addEventListener('click', () => {
+    scrollAmount += scrollStep;
+    if (scrollAmount > maxScroll) {
+      scrollAmount = maxScroll;
+    }
+    carrouselContainer.scrollTo({
+      top: 0,
+      left: scrollAmount,
+      behavior: 'smooth',
+    });
+    updateArrowState();
+  });
+
+  leftArrow.addEventListener('click', () => {
+    scrollAmount -= scrollStep;
+    if (scrollAmount < 0) {
+      scrollAmount = 0;
+    }
+    carrouselContainer.scrollTo({
+      top: 0,
+      left: scrollAmount,
+      behavior: 'smooth',
+    });
+    updateArrowState();
+  });
+
+  // Inicializa o estado das setas
+  updateArrowState();
+});
+  </script>
+  <!-- <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const carrouselContainer = document.querySelector('.evolution_container > div > div:last-of-type');
+      const leftArrow = document.querySelector('.evolution_container svg:first-of-type');
+      const rightArrow = document.querySelector('.evolution_container svg:last-of-type');
+
+      console.log(carrouselContainer)
+
+      let scrollAmount = 0;
+      const scrollStep = 300; // Ajuste o valor conforme necessário
+      const maxScroll = carrouselContainer.scrollWidth - carrouselContainer.clientWidth;
+
+      rightArrow.addEventListener('click', () => {
+        scrollAmount += scrollStep;
+        if (scrollAmount > maxScroll) {
+          scrollAmount = maxScroll;
+        }
+        carrouselContainer.scrollTo({
+          top: 0,
+          left: scrollAmount,
+          behavior: 'smooth',
+        });
+      });
+
+      leftArrow.addEventListener('click', () => {
+        scrollAmount -= scrollStep;
+        if (scrollAmount < 0) {
+          scrollAmount = 0;
+        }
+        carrouselContainer.scrollTo({
+          top: 0,
+          left: scrollAmount,
+          behavior: 'smooth',
+        });
+      });
+    });
+  </script> -->
 </body>
 </html>
