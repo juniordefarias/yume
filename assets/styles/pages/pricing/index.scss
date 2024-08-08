@@ -166,14 +166,20 @@
     }
 
     & > div:nth-of-type(2) {
+
       display: flex;
       flex-direction: column;
       //justify-content: center;
       gap: 16px;
 
+
       @media (min-width: $breakpoint-medium) {
         flex-direction: row;
-        
+      }
+
+      @media (min-width: $breakpoint-medium) {
+        justify-content: center;
+        margin-bottom: 64px;
       }
 
       & > div {
@@ -244,7 +250,6 @@
     padding: 40px 0 0;
 
     gap: 48px;
-
     //outline: 40px solid red;
     //border-top: 40px solid red;
 

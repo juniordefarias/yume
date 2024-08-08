@@ -20,7 +20,7 @@
   elementos.forEach(elemento => observer.observe(elemento));
 }); */
 
-function observeParent(element) {
+function observeParent(element, delay=0) {
   const elementos = document.querySelectorAll(element);
 
   elementos.forEach(elemento => elemento.parentElement.classList.add('animate__animated'));
@@ -32,7 +32,7 @@ function observeParent(element) {
         setTimeout(() => {
           entry.target.parentElement.classList.add('animate__fadeInUp');
           console.log(entry.target.parentElement);
-        }, 200);
+        }, delay);
 
         setTimeout(() => {
           child.style.opacity = 1;
@@ -116,14 +116,15 @@ function observeChildren(element) {
 document.addEventListener("DOMContentLoaded", function() {
   observe('h1', 100);
   observe('h1 + p', 400);
-  observeParent('h2');
+  observeParent('h2', 150);
   observe('h3', 300);
   observe('button', 400);
 
   observe('.home_container > div > div strong', 300);
 
-  observeParent('form');
-  observe('form', 200);
+  //observeParent('form', 0);
+  observe('.form_container > div > div:first-of-type')
+  observe('form', 100);
 
   observe('footer > div > div > div > svg', 200);
   observe('footer > div > div > div > p', 100);
@@ -133,5 +134,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
   //observeUL();
   observeChildren('ul');
+  
+  observeChildren('.faq_container > div > div:last-of-type');
 });
 

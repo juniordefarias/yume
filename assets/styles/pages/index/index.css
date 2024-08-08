@@ -182,6 +182,14 @@ button:hover {
   background-color: #FF6986;
 }
 
+.testimonials_container {
+  padding-bottom: 20px;
+}
+@media (min-width: 1024px) {
+  .testimonials_container {
+    padding-bottom: 120px;
+  }
+}
 .testimonials_container > div {
   margin: 0;
   width: 100%;
@@ -268,7 +276,7 @@ button:hover {
 .testimonials_container > div > ul:first-of-type li span {
   color: #FF4A71;
 }
-.testimonials_container > div > ul:last-of-type {
+.testimonials_container > div > ul:nth-of-type(2) {
   display: grid;
   grid-auto-flow: column;
   grid-auto-columns: 80%;
@@ -280,22 +288,22 @@ button:hover {
   grid-auto-columns: 60%;
 }
 @media (min-width: 1024px) {
-  .testimonials_container > div > ul:last-of-type {
+  .testimonials_container > div > ul:nth-of-type(2) {
     grid-template-columns: repeat(5, 1fr);
   }
 }
-.testimonials_container > div > ul:last-of-type > * {
+.testimonials_container > div > ul:nth-of-type(2) > * {
   align-self: center;
   justify-self: center;
 }
 @media (min-width: 768px) {
-  .testimonials_container > div > ul:last-of-type {
+  .testimonials_container > div > ul:nth-of-type(2) {
     grid-auto-columns: 29%;
     padding-bottom: 4px;
   }
 }
 @media (min-width: 1024px) {
-  .testimonials_container > div > ul:last-of-type {
+  .testimonials_container > div > ul:nth-of-type(2) {
     display: flex;
     justify-content: space-between;
   }
@@ -303,7 +311,12 @@ button:hover {
 
 .form_container {
   position: relative;
-  padding-bottom: 380px;
+  padding-bottom: 64px;
+}
+@media (min-width: 1024px) {
+  .form_container {
+    padding-bottom: 320px;
+  }
 }
 .form_container > div {
   background-color: #FF4A71;
@@ -385,6 +398,82 @@ button:hover {
   width: 100%;
 }
 
+.faq_container {
+  padding-bottom: 240px;
+}
+.faq_container > div {
+  display: grid;
+  gap: 64px;
+}
+.faq_container > div strong {
+  color: #FF4A71;
+  font-weight: 700;
+  display: inline-block;
+  margin-bottom: 8px;
+}
+@media (min-width: 768px) {
+  .faq_container > div {
+    grid-template-columns: 250px 1fr;
+  }
+}
+@media (min-width: 1024px) {
+  .faq_container > div {
+    grid-template-columns: 420px 1fr;
+    gap: 120px;
+  }
+}
+.faq_container > div > div:first-of-type div {
+  position: sticky;
+  top: 124px;
+  z-index: 100;
+}
+.faq_container > div > div:first-of-type div button {
+  display: none;
+}
+@media (min-width: 1024px) {
+  .faq_container > div > div:first-of-type div button {
+    margin-top: 24px;
+    display: block;
+  }
+}
+.faq_container > div > div:last-of-type {
+  display: grid;
+  gap: 24px;
+}
+.faq_container > div > div:last-of-type > div {
+  padding: 32px;
+  background-color: #F4F4F4;
+  border-radius: 24px;
+}
+.faq_container > div > div:last-of-type > div > div:first-of-type {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+.faq_container > div > div:last-of-type > div > div:first-of-type span {
+  font-size: 18px;
+}
+.faq_container > div > div:last-of-type > div > div:first-of-type svg {
+  transition: transform 0.3s ease;
+}
+.faq_container > div > div:last-of-type > div > div:last-of-type {
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.3s ease, opacity 0.3s ease;
+  opacity: 0;
+  /* margin-top: 16px;
+  padding: 16px 0 0;*/
+  opacity: 0.7;
+}
+.faq_container > div > div:last-of-type > div > div:last-of-type.visible {
+  max-height: 100px;
+  opacity: 1;
+  margin-top: 12px;
+  padding-top: 16px;
+  border-top: 1px solid #CCCCCC;
+}
+
 @font-face {
   font-family: "SF Pro Display";
   src: url("assets/fonts/SF-Pro-Display-Bold.otf") format("otf");
@@ -408,10 +497,6 @@ button:hover {
   padding: 0;
   margin: 0;
   font-family: "SF Pro Display", sans-serif;
-}
-
-html {
-  scroll-behavior: smooth;
 }
 
 a {
@@ -626,7 +711,7 @@ a:hover svg path {
   background-repeat: no-repeat;
   background-color: black;
   border-radius: 24px;
-  height: 700px;
+  height: 500px;
 }
 @media (min-width: 1024px) {
   .story_container > div > div:first-of-type {
@@ -949,12 +1034,24 @@ a:hover svg path {
   color: #1E1E1E;
 }
 
+.benefits_container {
+  padding-bottom: 40px;
+}
+@media (min-width: 1024px) {
+  .benefits_container {
+    padding-bottom: 120px;
+  }
+}
 .benefits_container > div {
   margin: 0;
   width: 100%;
   max-width: inherit;
-  display: grid;
+  /* display: grid;
   gap: 64px;
+
+  @media (min-width: $breakpoint-large) {
+    gap: 80px;
+  } */
 }
 @media (min-width: 1536px) {
   .benefits_container > div {
@@ -976,13 +1073,16 @@ a:hover svg path {
     padding-left: 0;
   }
 }
-@media (min-width: 1024px) {
-  .benefits_container > div {
-    gap: 80px;
-  }
+.benefits_container > div > div:nth-of-type(1) {
+  margin-bottom: 64px;
 }
 .benefits_container > div > div:nth-of-type(1) h2 {
   max-width: 728px;
+}
+@media (min-width: 1024px) {
+  .benefits_container > div > div:nth-of-type(1) {
+    margin-bottom: 80px;
+  }
 }
 .benefits_container > div > ul {
   overflow: visible;
@@ -1065,8 +1165,10 @@ a:hover svg path {
 }
 .benefits_container > div > ul > li:nth-of-type(2) {
   padding: 0;
-  overflow: hidden;
+  border-radius: 16px;
   position: relative;
+}
+.benefits_container > div > ul > li:nth-of-type(2) > * {
   /* & > * {
     cursor: pointer;
     transition: transform 0.5s ease;
@@ -1077,7 +1179,7 @@ a:hover svg path {
   cursor: pointer;
   transition: transform 0.5s ease;
 }
-.benefits_container > div > ul > li:nth-of-type(2):hover {
+.benefits_container > div > ul > li:nth-of-type(2) > *:hover {
   transform: scale(1.03);
 }
 .benefits_container > div > ul > li:nth-of-type(2) img {
@@ -1085,6 +1187,7 @@ a:hover svg path {
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+  border-radius: 16px;
 }
 .benefits_container > div > ul > li:nth-of-type(2) div {
   display: flex;
@@ -1153,11 +1256,20 @@ a:hover svg path {
     font-size: 16px;
   }
 }
+.benefits_container > div > div:last-of-type {
+  margin-top: 40px;
+}
 @media (min-width: 768px) {
   .benefits_container > div > div:last-of-type {
     max-width: 1200px;
     width: calc(100% - 40px);
     margin: 0 auto;
+    margin-top: 40px;
+  }
+}
+@media (min-width: 1024px) {
+  .benefits_container > div > div:last-of-type {
+    margin-top: 64px;
   }
 }
 .benefits_container > div > div:last-of-type a {

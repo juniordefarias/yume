@@ -1,7 +1,14 @@
 .form_container {
   position: relative;
 
-  padding-bottom: 380px;
+  //padding-bottom: 380px;
+  //padding-bottom: 320px;
+
+  padding-bottom: 64px;
+
+  @media (min-width: $breakpoint-large) {
+    padding-bottom: 320px;
+  }
 
   & > div {
     background-color: $color-rosa-yume;

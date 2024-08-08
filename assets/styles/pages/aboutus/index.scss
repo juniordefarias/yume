@@ -84,8 +84,10 @@
 
       position: relative;
       
-
-      @include animation-scale();
+      & > * {
+        //@include animation-scale();
+        @include animation-up();
+      }
 
       img {
         width: 100%;

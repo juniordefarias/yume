@@ -1,4 +1,9 @@
 .testimonials_container {
+  padding-bottom: 20px;
+  @media (min-width: $breakpoint-large) {
+    padding-bottom: 120px;
+  }
+
   & > div {
     margin: 0;
     width: 100%;
@@ -82,7 +87,7 @@
       }
     }
 
-    & > /* div:last-of-type */ ul:last-of-type {
+    & > /* div:last-of-type */ ul:nth-of-type(2) {
       @include carrousel(5);
       grid-auto-columns: 60%;
 

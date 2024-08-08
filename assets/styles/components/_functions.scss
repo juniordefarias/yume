@@ -178,7 +178,7 @@
 
 }
 
-@mixin animation-scale() {
+@mixin animation-scale($scale:1.03) {
   /* & > * {
     cursor: pointer;
     transition: transform 0.5s ease;
@@ -189,7 +189,8 @@
   cursor: pointer;
   transition: transform 0.5s ease;
   &:hover {
-    transform: scale(1.03);
+    //transform: scale(1.03);
+    transform: scale($scale);
   }
 }
 
