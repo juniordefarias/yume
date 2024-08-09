@@ -141,7 +141,7 @@ footer > div > div:first-of-type {
 }
 @media (min-width: 1024px) {
   footer > div > div:first-of-type {
-    grid-template-columns: 1fr 64px 202px 306px;
+    grid-template-columns: 1fr 100px 202px 306px;
     gap: 88px;
   }
 }

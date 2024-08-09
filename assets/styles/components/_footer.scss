@@ -17,7 +17,7 @@ footer {
       gap: 54px;
 
       @media (min-width: $breakpoint-large) {
-        grid-template-columns: 1fr 64px 202px 306px;
+        grid-template-columns: 1fr 100px 202px 306px;
         gap: 88px;
       }
 
